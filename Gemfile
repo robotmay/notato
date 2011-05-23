@@ -8,7 +8,7 @@ gem 'coffee-script'
 gem 'uglifier'
 gem 'jquery-rails'
 
-gem 'mongoid', '~> 2.0'
+gem 'mongoid', '~> 2.0', git: "git://github.com/mongoid/mongoid.git"
 gem 'bson_ext', '~> 1.3'
 gem 'carrierwave'
 gem 'exifr'
@@ -18,12 +18,18 @@ gem 'pismo'
 gem 'delayed_job'
 gem 'delayed_job_mongoid'
 gem 'workless'
+gem 'devise'
+gem 'kaminari'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+group :development do
+  gem 'unicorn'
+end
+
 group :test, :development do
   # Pretty printed test output
   gem 'turn', :require => false
-  gem 'rspec-rails', '~> 2.4'
+  gem 'rspec-rails', '~> 2.6'
 end
