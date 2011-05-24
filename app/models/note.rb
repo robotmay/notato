@@ -2,8 +2,11 @@ class Note
   include Mongoid::Document
 	include Mongoid::Timestamps
 	include Mongoid::Paranoia
-
-	belongs_to :user
+	embedded_in :notepatch
+	embeds_many :text_notes
+	embeds_many :webpage_notes
+	embeds_many :file_notes
+	embeds_many :image_notes
 	#has_and_belongs_to_many :links
 
 	field :title, type: String

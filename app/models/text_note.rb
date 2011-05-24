@@ -1,4 +1,7 @@
-class TextNote < Note
+class TextNote
+	include Mongoid::Document
+	embedded_in :note
+
 	MARKUP_FORMATS = %w[markdown textile rdoc org creole mediawiki]
 	LANGUAGES = []
 

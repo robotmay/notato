@@ -1,4 +1,6 @@
-class ImageNote < Note
+class ImageNote
+	include Mongoid::Document
+	embedded_in :note
 	embeds_one :exif
 
 	field :is_photo, type: Boolean, default: false

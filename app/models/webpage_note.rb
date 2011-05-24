@@ -1,4 +1,6 @@
-class WebpageNote < Note
+class WebpageNote
+	include Mongoid::Document
+	embedded_in :note
 	embeds_one :webpage
 
 	field :url, type: String
@@ -25,7 +27,7 @@ class WebpageNote < Note
 				description: 	doc.description,
 				datetime: 		doc.datetime
 			)
-			self.title ||= webpage.title
+			self.note.title ||= webpage.title
 			self.save
 		end
 	end
