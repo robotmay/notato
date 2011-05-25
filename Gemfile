@@ -19,6 +19,7 @@ gem 'delayed_job'
 gem 'delayed_job_mongoid'
 gem 'workless'
 gem 'devise'
+gem 'cancan'
 gem 'kaminari'
 
 # To use debugger
@@ -31,5 +32,5 @@ end
 group :test, :development do
   # Pretty printed test output
   gem 'turn', :require => false
-  gem 'rspec-rails', '~> 2.6'
+  gem 'rspec-rails', '~> 2.6', git: 'git://github.com/rspec/rspec-rails.git'
 end

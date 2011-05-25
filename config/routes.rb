@@ -1,10 +1,14 @@
 Notato::Application.routes.draw do
   devise_for :users, path: "/account"
 
-	require "subdomain"
-	constraints(Subdomain) do
+	#TODO Subdomains for public notepatches
+	#require "subdomain"
+	#constraints(Subdomain) do
+	#	root to: 'notes#index'
+	#end
+
+	resources :notepatches do
 		resources :notes
-		root to: 'notes#index'
 	end
 
   root to: 'welcome#index'

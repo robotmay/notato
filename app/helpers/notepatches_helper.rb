@@ -1,0 +1,2 @@
+module NotepatchesHelper
+end
